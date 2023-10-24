@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
     // save the results
     $results = $connection->query($sql);
     //dd($results);
-
+    $departments = [];
     if ($results->num_rows > 0) {
         $departments = $results->fetch_all(MYSQLI_ASSOC);
         //dd($departments, 'restults are here save them');
@@ -63,15 +63,24 @@ include __DIR__ . '/Partials/Head.php';
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Head</th>
+                            <th scope="col">Website</th>
                         </tr>
                     </thead>
+
                     <tbody>
-                        <?php foreach ($departments as $department) : ?>
-                            <tr class="">
-                                <td scope="row"><?= $department['name'] ?></td>
-                                <td><?= $department['head_of_department'] ?></td>
+                        <?php if (count($departments) > 0) : ?>
+                            <?php foreach ($departments as $department) : ?>
+                                <tr class="">
+                                    <td scope="row"><?= $department['name'] ?></td>
+                                    <td><?= $department['head_of_department'] ?></td>
+                                    <td><a href="<?= $department['website'] ?>" target="_blank"><?= $department['website'] ?></a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else : ?>
+                            <tr>
+                                <td colspan="3">Nessun risultato</td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
