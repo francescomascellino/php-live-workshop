@@ -4,12 +4,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+/* 
 var_dump($_SESSION);
 
 var_dump(session_status(), "
 _DISABLED = 0
 _NONE = 1
 _ACTIVE = 2");
+ */
 
 include __DIR__ . '/Partials/Head.php';
 

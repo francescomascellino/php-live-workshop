@@ -24,13 +24,14 @@
                         <a class="nav-link active" aria-current="page" href="http://localhost/PHP/php-live-workshop/">Home</a>
                         <!-- <a class="nav-link active" aria-current="page" href="http://localhost/PHP/php-live-workshop/login.php">Login <i class="fa-solid fa-lock" aria-hidden="true"></i></a> -->
 
-                        <?php if ($_SESSION['user_id']) : ?>
+                        <?php if (isset($_SESSION['user_id'])) : ?>
 
-                            <form action="http://localhost/PHP/php-live-workshop/logout.php" method="POST" class="d-flex"><input class="border-0 border-transparent bg-transparent" type="submit" value="Logout"></form>
+                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/dashboard.php">Dashboard <i class="fa-solid fa-table"></i></a>
 
-                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/dashboard.php">Dashboard <i class="fas fa-arrow-right fa-xs fa-fw"></i> </a>
+                            <form action="http://localhost/PHP/php-live-workshop/logout.php" method="POST" class="d-flex align-items-center"><input class="border-0 border-transparent bg-transparent" type="submit" value="Logout"> <i class=" fa-solid fa-right-from-bracket"></i></form>
+
                         <?php else : ?>
-                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/login.php">Log in <i class="fa-solid fa-lock"></i></a>
+                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/login.php">Log in <i class="fa-solid fa-right-to-bracket"></i></a>
                         <?php endif; ?>
 
                     </div>
