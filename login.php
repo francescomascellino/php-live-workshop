@@ -56,7 +56,8 @@ if (
 
         header('Location: ./dashboard.php');
     } else {
-        dd($connection, $result);
+        $_SESSION['error_message'] = 'You are not logged in to view the dashbord. Check your credentials';
+        header('Location: ./login.php');
     }
 
     // close DB connection
@@ -87,6 +88,12 @@ include __DIR__ . '/Partials/Head.php';
                 </div>
             </div>
         <?php endif; ?>
+
+        <?php if (isset($_SESSION['error_message'])) : ?>
+            <div class="alert alert-primary" role="alert">
+                <strong>Error</strong> <?= $_SESSION['error_message'] ?>
+            </div>
+        <?php endif ?>
 
         <form action="" method="POST">
 
