@@ -15,15 +15,19 @@ _ACTIVE = 2");
 
 include __DIR__ . '/Partials/Head.php';
 
+var_dump($_SESSION['user_id']);
+
+var_dump($username);
+
 ?>
 
-<div class="banner bg-dark text-white py-3">
-    <div class="container">
-        <div class="row">
-            <h1>Login</h1>
+<?php if (isset($_SESSION['user_id'])) : ?>
+    <div class="banner bg-dark text-white py-4 mb-5">
+        <div class="container">
+            <h2>Welcome <?= $username ?></h2>
         </div>
     </div>
-</div>
+<?php endif; ?>
 
 <div class="container">
     <div class="card text-center p-5 my-5">

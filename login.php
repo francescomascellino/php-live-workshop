@@ -78,7 +78,15 @@ include __DIR__ . '/Partials/Head.php';
 
 <div class="container">
     <div class="card p-5 my-5">
-        <h5 class="text-muted text-uppercase">login</h5>
+
+        <?php if (isset($_SESSION['user_id'])) : ?>
+            <div class="banner bg-dark text-white py-4 mb-5">
+                <div class="container">
+                    Dashboard
+                    <h2>Welcome <?= $username ?></h2>
+                </div>
+            </div>
+        <?php endif; ?>
 
         <form action="" method="POST">
 

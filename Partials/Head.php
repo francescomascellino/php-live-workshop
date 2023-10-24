@@ -21,17 +21,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarID">
                     <div class="navbar-nav ms-auto">
-                        <a class="nav-link active" aria-current="page" href="http://localhost/PHP/php-live-workshop/">Home</a>
-                        <!-- <a class="nav-link active" aria-current="page" href="http://localhost/PHP/php-live-workshop/login.php">Login <i class="fa-solid fa-lock" aria-hidden="true"></i></a> -->
+                        <a class="nav-link active" aria-current="page" href="index.php">Home</a>
 
                         <?php if (isset($_SESSION['user_id'])) : ?>
 
-                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/dashboard.php">Dashboard <i class="fa-solid fa-table"></i></a>
+                            <a class="nav-link" href="dashboard.php">Dashboard <i class="fa-solid fa-table"></i></a>
 
-                            <form action="http://localhost/PHP/php-live-workshop/logout.php" method="POST" class="d-flex align-items-center"><input class="border-0 border-transparent bg-transparent" type="submit" value="Logout"> <i class=" fa-solid fa-right-from-bracket"></i></form>
+                            <form action="logout.php" method="POST" class="d-flex align-items-center"><input class="border-0 border-transparent bg-transparent" type="submit" value="Logout"> <i class=" fa-solid fa-right-from-bracket"></i></form>
 
                         <?php else : ?>
-                            <a class="nav-link" href="http://localhost/PHP/php-live-workshop/login.php">Log in <i class="fa-solid fa-right-to-bracket"></i></a>
+                            <a class="nav-link" href="login.php">Log in <i class="fa-solid fa-right-to-bracket"></i></a>
                         <?php endif; ?>
 
                     </div>
